@@ -25,6 +25,8 @@ apply plugin: 'com.android.application'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+    ndkVersion "21.1.6352462"
+   
     compileSdkVersion 29
 
     lintOptions {
