@@ -13,10 +13,14 @@ Pod::Spec.new do |s|
   s.license          = { :file => '../LICENSE' }
   s.author           = { 'Your Company' => 'email@example.com' }
   s.source           = { :path => '.' }
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'Classes/**/*','MobileVLCKit.framework'
+  s.public_header_files = 'Classes/**/*.h'
   s.dependency 'Flutter'
   s.platform = :ios, '9.0'
-  s.dependency 'MobileVLCKit', '~> 3.3.12'
+  s.ios.vendored_frameworks = 'MobileVLCKit.framework'
+  s.frameworks  = "AudioToolbox", "VideoToolbox", "CoreMedia", "CoreVideo", "CoreAudio","AVFoundation","MediaPlayer"
+  s.libraries   = "bz2", "z", "stdc++","iconv","c++"
+  #s.dependency 'MobileVLCKit', '~> 3.3.12'
   s.static_framework = true
   
   # Flutter.framework does not contain a i386 slice. Only x86_64 simulators are supported.
